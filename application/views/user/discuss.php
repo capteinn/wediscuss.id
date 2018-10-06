@@ -18,10 +18,13 @@
   <div class="row">
     <div class="col-12 grid-margin">
       <div class="card">
+        <div class="card-header no-border" style="background-color: white">
+          <button type="button" class="btn btn-gradient-info float-right">Create Discussion</button>
+        </div>
         <div class="card-body">
-          <h4 class="card-title">Recent Tickets</h4>
+          <h4 class="card-title">All Discussion</h4>
           <div class="table-responsive">
-            <table class="table">
+            <table class="table table-hover">
               <thead>
                 <tr>
                   <th>
