@@ -14,7 +14,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="<?php base_url('dashboard') ?>">
+    <a class="nav-link active" href="<?php echo base_url('index.php/dashboard') ?>">
       <span class="menu-title">Dashboard</span>
       <i class="mdi mdi-home menu-icon"></i>
     </a>

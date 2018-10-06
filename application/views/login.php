@@ -41,7 +41,7 @@
                   <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
+                  Don't have an account? <a href="<?php echo base_url('index.php/register') ?>" class="text-primary">Create</a>
                 </div>
               </form>
             </div>
