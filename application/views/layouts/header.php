@@ -54,9 +54,11 @@
 								</form>
 							</div>
 							<div class="header-social d-flex align-items-center">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<nav class="d-flex align-items-center">
+								<ul class="main-menu">
+									<a href="<?php echo base_url('index.php/login') ?>">Login</a>
+								</ul>
+							</nav>
 							</div>
 						</div>
 					</div>

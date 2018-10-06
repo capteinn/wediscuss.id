@@ -14,13 +14,13 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="<?php echo base_url('index.php/dashboard') ?>">
+    <a class="nav-link" href="<?php echo base_url('index.php/dashboard') ?>">
       <span class="menu-title">Dashboard</span>
       <i class="mdi mdi-home menu-icon"></i>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+    <a class="nav-link" href="<?php echo base_url('index.php/discuss') ?>" aria-expanded="false" aria-controls="ui-basic">
       <span class="menu-title">Discuss</span>
       <i class="mdi mdi-wechat menu-icon"></i>
     </a>
