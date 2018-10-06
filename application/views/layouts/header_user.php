@@ -178,3 +178,10 @@
         </button>
       </div>
     </nav>
+
+    <!-- partial -->
+<div class="container-fluid page-body-wrapper">
+<!-- partial:partials/_sidebar.html -->
+<?php $this->load->view('layouts/menu_user') ?>
+<!-- partial -->
+<div class="main-panel">
