@@ -5,9 +5,9 @@
 		<div class="row fullscreen justify-content-center align-items-center">
 			<div class="col-lg-8">
 				<div class="banner-content text-center">
-					<p class="text-uppercase text-white">We work hard, we result perfect</p>
-					<h1 class="text-uppercase text-white">Crafting Digital Agency Experiences</h1>
-					<a href="#blog" class="primary-btn banner-btn">Explore Us</a>
+					<p class="text-uppercase text-white">silence treatment doesn't solve the problem</p>
+					<h1 class="text-uppercase text-white">We Discuss And We Know Everything</h1>
+					<a href="#blog" class="primary-btn banner-btn">Join with Us</a>
 				</div>
 			</div>
 		</div>
