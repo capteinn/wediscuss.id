@@ -4,7 +4,7 @@
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Favicon-->
-	<link rel="shortcut icon" href="img/fav.png">
+	<link rel="shortcut icon" href="../public/landing-page/img/fav.png">
 	<!-- Author Meta -->
 	<meta name="author" content="CodePixar">
 	<!-- Meta Description -->
@@ -20,12 +20,12 @@
 		<!--
 		CSS
 		============================================= -->
-		<link rel="stylesheet" href="css/linearicons.css">
-		<link rel="stylesheet" href="css/owl.carousel.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="../public/landing-page/css/linearicons.css">
+		<link rel="stylesheet" href="../public/landing-page/css/owl.carousel.css">
+		<link rel="stylesheet" href="../public/landing-page/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../public/landing-page/css/animate.css">
+		<link rel="stylesheet" href="../public/landing-page/css/bootstrap.css">
+		<link rel="stylesheet" href="../public/landing-page/css/main.css">
 	</head>
 	<body>
 		<div id="top"></div>
@@ -35,17 +35,14 @@
 				<div class="container">
 					<div class="header-content d-flex justify-content-between align-items-center">
 						<div class="logo">
-							<a href="#top" class="smooth"><img src="img/logo.png" alt=""></a>
+							<a href="#top" class="smooth"><img src="../public/landing-page/img/logo.png" alt=""></a>
 						</div>
 						<div class="right-bar d-flex align-items-center">
 							<nav class="d-flex align-items-center">
 								<ul class="main-menu">
 									<li><a href="#top">Home</a></li>
-									<li><a href="#services">Services</a></li>
-									<li><a href="#protfolio">Portfolio</a></li>
 									<li><a href="#team">Team</a></li>
 									<li><a href="#blog">Blog</a></li>
-									<li><a href="#contact">Contact</a></li>
 								</ul>
 								<a href="#" class="mobile-btn"><span class="lnr lnr-menu"></span></a>
 							</nav>

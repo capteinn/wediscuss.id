@@ -46,14 +46,14 @@
 						<div class="single-footer-widget">
 							<h6 class="text-white text-uppercase mb-20">Instafeed</h6>
 							<ul class="instafeed d-flex flex-wrap">
-								<li><img src="img/i1.jpg" alt=""></li>
-								<li><img src="img/i2.jpg" alt=""></li>
-								<li><img src="img/i3.jpg" alt=""></li>
-								<li><img src="img/i4.jpg" alt=""></li>
-								<li><img src="img/i5.jpg" alt=""></li>
-								<li><img src="img/i6.jpg" alt=""></li>
-								<li><img src="img/i7.jpg" alt=""></li>
-								<li><img src="img/i8.jpg" alt=""></li>
+								<li><img src="../public/landing-page/img/i1.jpg" alt=""></li>
+								<li><img src="../public/landing-page/img/i2.jpg" alt=""></li>
+								<li><img src="../public/landing-page/img/i3.jpg" alt=""></li>
+								<li><img src="../public/landing-page/img/i4.jpg" alt=""></li>
+								<li><img src="../public/landing-page/img/i5.jpg" alt=""></li>
+								<li><img src="../public/landing-page/img/i6.jpg" alt=""></li>
+								<li><img src="../public/landing-page/img/i7.jpg" alt=""></li>
+								<li><img src="../public/landing-page/img/i8.jpg" alt=""></li>
 							</ul>
 						</div>
 					</div>
@@ -70,13 +70,24 @@
 			</div>
 		</footer>
 
-		<script src="js/vendor/jquery-2.2.4.min.js"></script>
+		<script src="../public/landing-page/js/vendor/jquery-2.2.4.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="js/vendor/bootstrap.min.js"></script>
-		<script src="js/jquery.ajaxchimp.min.js"></script>
-		<script src="js/jquery.sticky.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/mixitup.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../public/landing-page/js/vendor/bootstrap.min.js"></script>
+		<script src="../public/landing-page/js/jquery.ajaxchimp.min.js"></script>
+		<script src="../public/landing-page/js/jquery.sticky.js"></script>
+		<script src="../public/landing-page/js/owl.carousel.min.js"></script>
+		<script src="../public/landing-page/js/mixitup.min.js"></script>
+
+		<script type="text/javascript">
+        $('a[href^="#"]').on('click', function(event) {
+            let hash = this.hash;
+            if (hash) {
+              event.preventDefault();
+              $('html, body').animate({scrollTop: $(hash).offset().top - 100}, 750);
+            }
+          });
+    </script>
+		
+		<script src="../public/landing-page/js/main.js"></script>
 	</body>
 </html>
