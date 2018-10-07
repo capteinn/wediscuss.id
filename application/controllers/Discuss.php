@@ -19,4 +19,11 @@ class Discuss extends CI_Controller {
 		$this->load->view('user/discuss', $data);
 		$this->load->view('layouts/footer_user');
 	}
+
+	public function add()
+	{
+		$this->load->view('layouts/header_user');
+		$this->load->view('user/add_discuss');
+		$this->load->view('layouts/footer_user');
+	}
 }
