@@ -19,7 +19,7 @@
     <div class="col-12 grid-margin">
       <div class="card">
         <div class="card-header no-border" style="background-color: white">
-          <button type="button" class="btn btn-gradient-info float-right">Create Discussion</button>
+          <a href="<?= base_url('index.php/discuss/add') ?>" class="btn btn-gradient-info float-right">Create Discussion</a>
         </div>
         <div class="card-body">
           <h4 class="card-title">All Discussion</h4>
@@ -38,7 +38,7 @@
                 <?php foreach ($threads as $thread) { ?>
                   <tr>
                     <td>
-                      <img src="<?= $thread->photo ?>../public/images/faces/face1.jpg" class="mr-2" alt="image">
+                      <img src="../public/images/faces/<?= $thread->photo ?>" class="mr-2" onerror="this.src='../public/images/faces/face1.jpg'" alt="image">
                       David Grey
                     </td>
                     <td>
