@@ -3,7 +3,7 @@
 class Thread_model extends CI_Model
 {
 	function all() {
-		return $this->db->join('users', 'users.id = threads.user_id')->get('threads')->result();
+		return $this->db->select('users.username, users.photo, threads.created_at date_realease, threads.*')->join('users', 'users.id = threads.user_id')->get('threads')->result();
 	}
 
 	function store($data) {
