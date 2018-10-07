@@ -27,43 +27,33 @@
             <table class="table table-hover">
               <thead>
                 <tr>
-                  <th>
-                    Assignee
-                  </th>
-                  <th>
-                    Title
-                  </th>
-                  <th>
-                    Created At
-                  </th>
-                  <th>
-                    Review
-                  </th>
-                  <th>
-                    Action
-                  </th>
+                  <th>Assignee</th>
+                  <th>Title</th>
+                  <th>Created At</th>
+                  <th>Review</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <?php foreach ($threads as $thread) { ?>
-                <tr>
-                  <td>
-                    <img src="../public/images/faces/face1.jpg" class="mr-2" alt="image">
-                    David Grey
-                  </td>
-                  <td>
-                    <?= $thread->title ?>
-                  </td>
-                  <td class="text-muted">
-                    <?= date('d F Y H:i', strtotime($thread->created_at)) ?>
-                  </td>
-                  <td>
-                    21
-                  </td>
-                  <td>
-                    <a href="#" class="badge badge-gradient-info" title="detail" ><i class="mdi mdi-eye"></i></a>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= $thread->photo ?>../public/images/faces/face1.jpg" class="mr-2" alt="image">
+                      David Grey
+                    </td>
+                    <td>
+                      <?= $thread->title ?>
+                    </td>
+                    <td class="text-muted">
+                      <?= date('d F Y H:i', strtotime($thread->created_at)) ?>
+                    </td>
+                    <td>
+                      21
+                    </td>
+                    <td>
+                      <a href="#" class="badge badge-gradient-info" title="detail" ><i class="mdi mdi-eye"></i></a>
+                    </td>
+                  </tr>
                 <?php } ?>
               </tbody>
             </table>
