@@ -14,8 +14,12 @@
               <div class="form-group">
                 <label for="exampleSelectGender">Categories</label>
                 <select class="form-control" id="exampleSelectGender">
-                  <option>Male</option>
-                  <option>Female</option>
+                  <option>Select Category</option>
+                  <?php 
+                    foreach ($categories as $category) { 
+                      echo "<option value='".$category->id."' >".$category->name."</option>";
+                    }
+                  ?>
                 </select>
               </div>
             </div>

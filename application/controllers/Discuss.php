@@ -9,6 +9,7 @@ class Discuss extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('thread_model');
+		$this->load->model('categories_model');
 	}
 
 	public function index()
@@ -23,9 +24,11 @@ class Discuss extends CI_Controller {
 
 	public function add()
 	{
+		$data['categories'] = $this->categories_model->all();
 		$data['title'] = 'Add Discuss';
+		
 		$this->load->view('layouts/header_user', $data);
-		$this->load->view('user/add_discuss');
+		$this->load->view('user/add_discuss', $data);
 		$this->load->view('layouts/footer_user');
 	}
 }
