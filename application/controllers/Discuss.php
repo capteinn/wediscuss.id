@@ -16,7 +16,7 @@ class Discuss extends CI_Controller {
 	{
 		$data['threads'] = $this->thread_model->all();
 		$data['title'] = 'Discuss';
-
+		
 		$this->load->view('layouts/header_user', $data);
 		$this->load->view('user/discuss', $data);
 		$this->load->view('layouts/footer_user');
