@@ -3,6 +3,6 @@
 class Thread_model extends CI_Model
 {
 	function all() {
-		return $this->db->get('threads')->result();
+		return $this->db->join('users', 'users.id = threads.user_id')->get('threads')->result();
 	}
 }
