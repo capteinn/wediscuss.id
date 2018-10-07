@@ -3,6 +3,7 @@
     <div class="card">
       <div class="card-body">
         <form class="forms-sample" action="<?= base_url('index.php/discuss/store') ?>" method="POST" >
+          <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
           <div class="row">
             <div class="col-8">
               <div class="form-group">
@@ -14,7 +15,7 @@
               <div class="form-group">
                 <label for="category">Categories</label>
                 <select class="form-control" id="category" name="category" required="">
-                  <option>Select Category</option>
+                  <option value="">Select Category</option>
                   <?php 
                     foreach ($categories as $category) { 
                       echo "<option value='".$category->id."' >".$category->name."</option>";
