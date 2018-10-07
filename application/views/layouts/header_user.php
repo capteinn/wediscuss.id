@@ -7,13 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Purple Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../public/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="<?= base_url() ?>public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="<?= base_url() ?>public/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="<?= base_url() ?>public/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../public/images/favicon.png" />
+  <link rel="shortcut icon" href="<?= base_url() ?>public/images/favicon.png" />
   <!-- datatables -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
@@ -23,8 +23,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="../public/index.html"><img src="../public/images/logo.svg" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../public/index.html"><img src="../public/images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="<?= base_url() ?>public/index.html"><img src="<?= base_url() ?>public/images/logo.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="<?= base_url() ?>public/index.html"><img src="<?= base_url() ?>public/images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <div class="search-field d-none d-md-block">
@@ -39,9 +39,9 @@
         </div>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" id="profileDropdown" href="../public/#" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" id="profileDropdown" href="<?= base_url() ?>public/#" data-toggle="dropdown" aria-expanded="false">
               <div class="nav-profile-img">
-                <img src="../public/images/faces/face1.jpg" alt="image">
+                <img src="<?= base_url() ?>public/images/faces/face1.jpg" alt="image">
                 <span class="availability-status online"></span>             
               </div>
               <div class="nav-profile-text">
@@ -54,7 +54,7 @@
                 Activity Log
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../public/#">
+              <a class="dropdown-item" href="<?= base_url() ?>public/#">
                 <i class="mdi mdi-logout mr-2 text-primary"></i>
                 Signout
               </a>
