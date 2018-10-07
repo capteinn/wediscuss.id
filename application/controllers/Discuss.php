@@ -50,12 +50,18 @@ class Discuss extends CI_Controller {
 
     	$data = array(
     		'title' => $title,
-    		'category' => $category,
-    		'description' => $description
+    		'category_id' => $category,
+    		'description' => $description,
     		'user_id' => 1
     	);
 
     	$result = $this->thread_model->store($data);
+
+			if($result) {
+				redirect('discuss');
+			}else{
+				$this->add();
+			}
     }
 	}
 }
