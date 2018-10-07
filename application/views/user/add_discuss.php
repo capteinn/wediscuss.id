@@ -2,18 +2,18 @@
   <div class="col-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <form class="forms-sample">
+        <form class="forms-sample" action="<?= base_url('index.php/discuss/store') ?>" method="POST" >
           <div class="row">
             <div class="col-8">
               <div class="form-group">
-                <label for="exampleInputName1">Title</label>
-                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Name" required="">
               </div>
             </div>
             <div class="col-4">
               <div class="form-group">
-                <label for="exampleSelectGender">Categories</label>
-                <select class="form-control" id="exampleSelectGender">
+                <label for="category">Categories</label>
+                <select class="form-control" id="category" name="category" required="">
                   <option>Select Category</option>
                   <?php 
                     foreach ($categories as $category) { 
@@ -25,11 +25,11 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleTextarea1">Textarea</label>
-            <textarea class="form-control wysiwyg" id="exampleTextarea1" rows="8"></textarea>
+            <label for="description">Textarea</label>
+            <textarea class="form-control wysiwyg" name="description" id="description" required=""></textarea>
           </div>
           <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
-          <button class="btn btn-light">Cancel</button>
+          <a href="<?= base_url('index.php/discuss') ?>" class="btn btn-light">Cancel</a>
         </form>
       </div>
     </div>
