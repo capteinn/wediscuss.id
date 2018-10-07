@@ -22,13 +22,13 @@
                 <tr>
                   <td>
                     <img src="../public/images/faces/<?= $thread->photo ?>" class="mr-2" onerror="this.src='../public/images/faces/face1.jpg'" alt="image">
-                    David Grey
+                    <?= $thread->username ?>
                   </td>
                   <td>
                     <?= $thread->title ?>
                   </td>
-                  <td class="text-muted">
-                    <?= date('d F Y H:i', strtotime($thread->created_at)) ?>
+                  <td class="text-muted ">
+                    <?= date('F Y - H:i', strtotime($thread->date_realease)); ?>
                   </td>
                   <td>
                     21
