@@ -22,7 +22,7 @@
           </div>
           <div class="form-group">
             <label for="exampleTextarea1">Textarea</label>
-            <textarea class="form-control" id="exampleTextarea1" rows="6"></textarea>
+            <textarea class="form-control wysiwyg" id="exampleTextarea1" rows="8"></textarea>
           </div>
           <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
           <button class="btn btn-light">Cancel</button>
