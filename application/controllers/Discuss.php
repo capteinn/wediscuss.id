@@ -31,4 +31,31 @@ class Discuss extends CI_Controller {
 		$this->load->view('user/add_discuss', $data);
 		$this->load->view('layouts/footer_user');
 	}
+
+	public function store()
+	{
+		$this->form_validation->set_rules('title','Title','trim|required|xss_clean');
+		$this->form_validation->set_rules('category','Category','trim|required|numeric|xss_clean');
+		$this->form_validation->set_rules('description','Description','trim|required|xss_clean');
+
+		if($this->form_validation->run() == FALSE)
+    {
+       $this->add();
+    }
+    else
+    {
+    	$title = $this->input->post('title');
+    	$category = $this->input->post('category');
+    	$description = $this->input->post('description');
+
+    	$data = array(
+    		'title' => $title,
+    		'category' => $category,
+    		'description' => $description
+    		'user_id' => 1
+    	);
+
+    	$result = $this->thread_model->store($data);
+    }
+	}
 }
