@@ -22,6 +22,16 @@ class Discuss extends CI_Controller {
 		$this->load->view('layouts/footer_user');
 	}
 
+	public function detail($id)
+	{
+		$data['details'] = $this->thread_model->detail($id);
+		$data['title'] = 'Detail Discussion';
+		
+		$this->load->view('layouts/header_user', $data);
+		$this->load->view('user/detail_discuss', $data);
+		$this->load->view('layouts/footer_user');
+	}
+
 	public function add()
 	{
 		$data['categories'] = $this->categories_model->all();
