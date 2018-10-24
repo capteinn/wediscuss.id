@@ -10,6 +10,7 @@ class Discuss extends CI_Controller {
 		parent::__construct();
 		$this->load->model('thread_model');
 		$this->load->model('categories_model');
+		$this->load->model('comment_model');
 	}
 
 	public function index()
