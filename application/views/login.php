@@ -7,15 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Purple Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../public/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>public/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>public/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../public/images/favicon.png" />
+  <link rel="shortcut icon" href="<?php echo base_url() ?>public/images/favicon.png" />
 </head>
 
 <body>
@@ -26,7 +26,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left p-5">
               <div class="brand-logo text-center">
-                <img src="../public/images/logo.svg">
+                <img src="<?php echo base_url('') ?>public/images/logo.svg">
               </div>
               <h4 class="text-center">Hello! let's get started</h4>
               <h6 class="font-weight-light text-center">Sign in to continue.</h6>
@@ -54,12 +54,12 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../public/vendors/js/vendor.bundle.base.js"></script>
-  <script src="../public/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="<?php echo base_url() ?>public/vendors/js/vendor.bundle.base.js"></script>
+  <script src="<?php echo base_url() ?>public/vendors/js/vendor.bundle.addons.js"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="../public/js/off-canvas.js"></script>
-  <script src="../public/js/misc.js"></script>
+  <script src="<?php echo base_url() ?>public/js/off-canvas.js"></script>
+  <script src="<?php echo base_url() ?>public/js/misc.js"></script>
   <!-- endinject -->
 </body>
 
