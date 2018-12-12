@@ -25,5 +25,11 @@
       <i class="mdi mdi-wechat menu-icon"></i>
     </a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<?php echo base_url('index.php/categories') ?>" aria-expanded="false" aria-controls="ui-basic">
+      <span class="menu-title">Categories</span>
+      <i class="mdi mdi-wechat menu-icon"></i>
+    </a>
+  </li>
 </ul>
 </nav>
