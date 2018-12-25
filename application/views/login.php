@@ -30,20 +30,30 @@
               </div>
               <h4 class="text-center">Hello! let's get started</h4>
               <h6 class="font-weight-light text-center">Sign in to continue.</h6>
-              <form class="pt-3">
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                <?php echo form_open('login/signUp', array('class'=>'pt-3')) ?>
+                <div class="small">
+                  <?php 
+                    if ($this->session->flashdata('error')) {
+                      echo '<div class="card-alert alert alert-danger mb-4 rounded">' . $this->session->flashdata('error') . '</div>';
+                    }
+
+                    if ($this->session->flashdata('success')) {
+                      echo '<div class="card-alert alert alert-success mb-4 rounded">' . $this->session->flashdata('success') . '</div>';
+                    }
+                  ?>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" required="" name="username">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required="" name="password">
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                  <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="<?php echo base_url('index.php/register') ?>" class="text-primary">Create</a>
                 </div>
-              </form>
             </div>
           </div>
         </div>
