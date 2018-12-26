@@ -1,13 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Discuss extends CI_Controller {
+require APPPATH . '/libraries/BaseController.php';
+
+class Discuss extends BaseController {
 	/**
      * This is default constructor of the class
      */
 	public function __construct()
 	{
 		parent::__construct();
+		$this->isLoggedIn();
+		$this->isStudent();
+
 		$this->load->model('thread_model');
 		$this->load->model('categories_model');
 		$this->load->model('comment_model');
