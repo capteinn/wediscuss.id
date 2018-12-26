@@ -34,7 +34,7 @@
                     21
                   </td>
                   <td>
-                    <a href="#" class="badge badge-gradient-info" title="detail" ><i class="mdi mdi-eye"></i></a>
+                    <a href="<?php echo site_url('discuss/detail/'.$thread->id) ?>" class="badge badge-gradient-info" title="detail" ><i class="mdi mdi-eye"></i></a>
                   </td>
                 </tr>
               <?php } ?>
