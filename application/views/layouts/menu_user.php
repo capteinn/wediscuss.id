@@ -14,21 +14,21 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url('index.php/dashboard') ?>">
+    <a class="nav-link" href="<?php echo site_url('dashboard') ?>">
       <span class="menu-title">Dashboard</span>
       <i class="mdi mdi-home menu-icon"></i>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url('index.php/discuss') ?>" aria-expanded="false" aria-controls="ui-basic">
+    <a class="nav-link" href="<?php echo site_url('discuss') ?>">
       <span class="menu-title">Discuss</span>
       <i class="mdi mdi-wechat menu-icon"></i>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url('index.php/categories') ?>" aria-expanded="false" aria-controls="ui-basic">
+    <a class="nav-link" href="<?php echo site_url('categories') ?>">
       <span class="menu-title">Categories</span>
-      <i class="mdi mdi-wechat menu-icon"></i>
+      <i class="mdi mdi-pencil menu-icon"></i>
     </a>
   </li>
 </ul>
