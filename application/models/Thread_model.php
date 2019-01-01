@@ -28,6 +28,25 @@ class Thread_model extends CI_Model
 		return $this->db->insert('threads', $data);
 	}
 
+	function updateLike($data, $id) {
+		$this->db->where('id', $id);
+		return $this->db->update('likes', $data);
+	}
+
+	function pushUpdateLike($id, $like) {
+		$this->db->where('id', $id);
+		if ($like) {
+			//change like
+			$this->db->set('`dislike`', '`dislike`-1', FALSE);
+			$this->db->set('`like`', '`like`+1', FALSE);
+		} else {
+			//change dislike
+			$this->db->set('`like`', '`like`-1', FALSE);
+			$this->db->set('`dislike`', '`dislike`+1', FALSE);
+		}
+		return $this->db->update('threads');
+	}
+
 	function like($data) {
 		return $this->db->insert('likes', $data);
 	}

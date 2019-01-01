@@ -82,25 +82,37 @@ class Discuss extends BaseController {
     }
 	}
 
-	public function like($id) {
+	public function like($id, $comment_id = NULL) {
 		$data = array(
 			'thread_id' => $id,
 			'user_id' => $this->user_id,
 			'like' => 1
 		);
-		$this->thread_model->like($data);
-		$this->thread_model->pushLike($id);
+
+		if ($comment_id) {
+			$this->thread_model->updateLike(array('like'=>1), $comment_id);
+			$this->thread_model->pushUpdateLike($id, 1);
+		} else {
+			$this->thread_model->like($data);
+			$this->thread_model->pushLike($id);
+		}
 
 		redirect('discuss/detail/'.$id);
 	}
 
-	public function dislike($id) {
+	public function dislike($id, $comment_id = NULL) {
 		$data = array(
 			'thread_id' => $id,
 			'user_id' => $this->user_id,
 		);
-		$this->thread_model->dislike($data);
-		$this->thread_model->pushDislike($id);
+
+		if ($comment_id) {
+			$this->thread_model->updateLike(array('like'=>0), $comment_id);
+			$this->thread_model->pushUpdateLike($id, 0);
+		} else {
+			$this->thread_model->dislike($data);
+			$this->thread_model->pushDislike($id);
+		}
 
 		redirect('discuss/detail/'.$id);
 	}

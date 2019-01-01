@@ -7,7 +7,10 @@
       <div class="card-body">
         <h4 class="card-title"><?php echo $details->title ?></h4>
         <p class="float-right">
-          <i class="mdi mdi-thumb-up text-danger"></i> <?php echo $details->like ?>
+          <i class="mdi mdi-thumb-down text-danger"></i> <?php echo $details->dislike ?>
+        </p>
+        <p class="float-right mr-3">
+          <i class="mdi mdi-thumb-up text-success"></i> <?php echo $details->like ?>
         </p>
         <p class="card-description">
           <?php echo date('d F Y H:i', strtotime($details->date_realease)) ?>
@@ -23,25 +26,25 @@
               if ($getLike->like) {
                 // like
                 ?>
-                <button type="button" onclick="location.href='<?php echo site_url('discuss/dislike/'.$details->id) ?>'" title="Unlike" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
-                  <i class="mdi mdi-thumb-down text-dark"></i>
+                <button type="button" onclick="location.href='<?php echo site_url('discuss/dislike/'.$details->id.'/'.$getLike->id) ?>'" title="Unlike" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
+                  <i class="mdi mdi-thumb-down text-danger"></i>
                 </button>
                 <?php
               } else {
                 // dislike
                 ?>
-                  <button type="button" title="Like" onclick="location.href='<?php echo site_url('discuss/like/'.$details->id) ?>'" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
-                    <i class="mdi mdi-thumb-up text-danger"></i>
+                  <button type="button" title="Like" onclick="location.href='<?php echo site_url('discuss/like/'.$details->id.'/'.$getLike->id) ?>'" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
+                    <i class="mdi mdi-thumb-up text-success"></i>
                   </button>
                 <?php
               }
             } else {
             ?>
               <button type="button" onclick="location.href='<?php echo site_url('discuss/dislike/'.$details->id) ?>'" title="Unlike" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
-                <i class="mdi mdi-thumb-down text-dark"></i>
+                <i class="mdi mdi-thumb-down text-danger"></i>
               </button>
               <button type="button" title="Like" onclick="location.href='<?php echo site_url('discuss/like/'.$details->id) ?>'" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
-                <i class="mdi mdi-thumb-up text-danger"></i>
+                <i class="mdi mdi-thumb-up text-success"></i>
               </button>
             <?php
             }
