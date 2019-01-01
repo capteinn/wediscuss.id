@@ -6,7 +6,7 @@
         <h4 class="font-weight-normal mb-3">Joined Discussion
           <i class="mdi mdi-chart-line mdi-24px float-right"></i>
         </h4>
-        <h2 class="mb-5">15,0000</h2>
+        <h2 class="mb-5"><?php echo $students ?></h2>
         <h6 class="card-text">Student joined in discussion</h6>
       </div>
     </div>
@@ -18,7 +18,7 @@
         <h4 class="font-weight-normal mb-3">Thread
           <i class="mdi mdi-book mdi-24px float-right"></i>
         </h4>
-        <h2 class="mb-5">45,6334</h2>
+        <h2 class="mb-5"><?php echo $threads ?></h2>
         <h6 class="card-text">Thread posted</h6>
       </div>
     </div>
@@ -30,7 +30,8 @@
         <h4 class="font-weight-normal mb-3">Most Popular Thread
           <i class="mdi mdi-thumb-up mdi-24px float-right"></i>
         </h4>
-        <h2 class="mb-5">20,923 like</h2>
+        <h2><?php echo $mostlike->like ?> like</h2>
+        <p class="mb-3"><?php echo $mostlike->title ?> like</p>
         <h6 class="card-text">Most likely thread</h6>
       </div>
     </div>
