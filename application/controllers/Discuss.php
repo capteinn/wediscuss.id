@@ -1,13 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Discuss extends CI_Controller {
+require APPPATH . '/libraries/BaseController.php';
+
+class Discuss extends BaseController {
 	/**
      * This is default constructor of the class
      */
 	public function __construct()
 	{
 		parent::__construct();
+		$this->isLoggedIn();
+		$this->isStudent();
+
 		$this->load->model('thread_model');
 		$this->load->model('categories_model');
 		$this->load->model('comment_model');
@@ -26,6 +31,7 @@ class Discuss extends CI_Controller {
 	public function detail($id)
 	{
 		$data['details'] = $this->thread_model->detail($id);
+		$data['getLike'] = $this->thread_model->getLike($id, $this->user_id);
 		$data['title'] = 'Detail Discussion';
 		
 		$this->load->view('layouts/header_user', $data);
@@ -74,5 +80,53 @@ class Discuss extends CI_Controller {
 				$this->add();
 			}
     }
+	}
+
+	public function like($id, $comment_id = NULL) {
+		$data = array(
+			'thread_id' => $id,
+			'user_id' => $this->user_id,
+			'like' => 1
+		);
+
+		if ($comment_id) {
+			$this->thread_model->updateLike(array('like'=>1), $comment_id);
+			$this->thread_model->pushUpdateLike($id, 1);
+		} else {
+			$this->thread_model->like($data);
+			$this->thread_model->pushLike($id);
+		}
+
+		redirect('discuss/detail/'.$id);
+	}
+
+	public function dislike($id, $comment_id = NULL) {
+		$data = array(
+			'thread_id' => $id,
+			'user_id' => $this->user_id,
+		);
+
+		if ($comment_id) {
+			$this->thread_model->updateLike(array('like'=>0), $comment_id);
+			$this->thread_model->pushUpdateLike($id, 0);
+		} else {
+			$this->thread_model->dislike($data);
+			$this->thread_model->pushDislike($id);
+		}
+
+		redirect('discuss/detail/'.$id);
+	}
+
+	public function comment() {
+		$id = $this->input->post('id');
+
+		$data = array(
+			'thread_id' => $id,
+			'description' => $this->input->post('description'),
+			'user_id' => $this->user_id
+		);
+		$this->comment_model->store($data);
+
+		redirect('discuss/detail/'.$id);
 	}
 }

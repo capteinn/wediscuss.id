@@ -47,16 +47,12 @@
                 <span class="availability-status online"></span>             
               </div>
               <div class="nav-profile-text">
-                <p class="mb-1 text-black">David Greymaax</p>
+                <p class="mb-1 text-black"><?php echo ucwords($this->session->userdata('username')) ?></p>
               </div>
             </a>
             <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="">
-                <i class="mdi mdi-cached mr-2 text-success"></i>
-                Activity Log
-              </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="<?= base_url() ?>public/#">
+              <a class="dropdown-item" href="<?= site_url('access/logout') ?>">
                 <i class="mdi mdi-logout mr-2 text-primary"></i>
                 Signout
               </a>
@@ -81,7 +77,7 @@
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
           <i class="mdi mdi-home"></i>                 
         </span>
-        <?= !empty($title) ? $title : 'Undefined Title'; ?>
+        <?= !empty($title) ? $title : ucwords($this->uri->segment(1)); ?>
       </h3>
       <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
