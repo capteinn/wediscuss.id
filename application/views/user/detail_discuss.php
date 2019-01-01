@@ -1,3 +1,6 @@
+<?php 
+  $comments = $this->comment_model->detail($details->thread_id);
+?>
 <div class="row">
   <div class="col-12 grid-margin stretch-card">
     <div class="card">
@@ -15,12 +18,34 @@
         <p>
           <i class="mdi mdi-compass icon-sm text-danger"></i>
           <?php echo $details->category_name ?>
-          <button type="button" title="Unlike" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
-            <i class="mdi mdi-thumb-down text-dark"></i>
-          </button>
-          <button type="button" title="Like" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
-            <i class="mdi mdi-thumb-up text-danger"></i>
-          </button>
+          <?php 
+            if (!empty($getLike)) {
+              if ($getLike->like) {
+                // like
+                ?>
+                <button type="button" onclick="location.href='<?php echo site_url('discuss/dislike/'.$details->id) ?>'" title="Unlike" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
+                  <i class="mdi mdi-thumb-down text-dark"></i>
+                </button>
+                <?php
+              } else {
+                // dislike
+                ?>
+                  <button type="button" title="Like" onclick="location.href='<?php echo site_url('discuss/like/'.$details->id) ?>'" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
+                    <i class="mdi mdi-thumb-up text-danger"></i>
+                  </button>
+                <?php
+              }
+            } else {
+            ?>
+              <button type="button" onclick="location.href='<?php echo site_url('discuss/dislike/'.$details->id) ?>'" title="Unlike" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
+                <i class="mdi mdi-thumb-down text-dark"></i>
+              </button>
+              <button type="button" title="Like" onclick="location.href='<?php echo site_url('discuss/like/'.$details->id) ?>'" class="mx-2 btn btn-outline-secondary btn-rounded btn-icon float-right">
+                <i class="mdi mdi-thumb-up text-danger"></i>
+              </button>
+            <?php
+            }
+          ?>
         </p>
       </div>
     </div>
@@ -30,14 +55,15 @@
   <div class="col-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <p class="text-muted float-right"><i class="mdi mdi-wechat icon-sm text-info"></i> 20 Comments</p>
+        <p class="text-muted float-right" id="count_comment"><i class="mdi mdi-wechat icon-sm text-info"></i> <?php echo count($comments) ?> Comments</p>
         <h4 class="card-title">Reply</h4>
         <hr>
         <div class="media d-block">
-          <form action="" method="POST" role="form">
+          <?php echo form_open('discuss/comment') ?>
             <div class="row">
               <div class="col-11 mr-0">
                 <div class="form-group">
+                  <input type="hidden" name="id" value="<?php echo $details->id ?>" required>
                   <textarea class="form-control" name="description" id="description" required="" placeholder="Isikan komentar Anda"></textarea>
                 </div>
               </div>
@@ -45,11 +71,8 @@
                 <button class="btn btn-primary btn-sm float-right">Reply</button>
               </div>
             </div>
-          </form>
         </div>
         <?php
-
-          $comments = $this->comment_model->detail($details->thread_id);
           
           if (!empty($comments)) {
 
@@ -59,12 +82,7 @@
         <div class="media">
             <img style="width: 50px; height: 50px" src="<?= base_url() ?>public/images/faces/face4.jpg" alt="image" class="icon-md text-info d-flex align-self-center mx-3 rounded">
             <div class="media-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="card-text"><?php echo '<b>' . ucwords($comment->username) . '</b> <span class="pl-2 small text-muted">'. date('d-m-Y H:i', strtotime($comment->created_at)) .'</span><br>' . $comment->description ?></p>
             </div>
         </div>
         <hr>
