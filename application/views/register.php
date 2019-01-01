@@ -30,26 +30,54 @@
               </div>
               <h4 class="text-center">New here?</h4>
               <h6 class="font-weight-light text-center">Signing up is easy. It only takes a few steps</h6>
-              <form class="pt-3">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-control-lg" id="exampleFormControlSelect2">
-                    <option>Country</option>
-                    <option>United States of America</option>
-                    <option>United Kingdom</option>
-                    <option>India</option>
-                    <option>Germany</option>
-                    <option>Argentina</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
-                </div>
+              <!-- <form class="pt-3"> -->
+                <!-- <form class="pt-3" role="form" id="daftar" action="<?php //echo site_url('register/daftar') ?>" method="post" enctype="multipart/form-data" > -->
+                  <?php echo form_open_multipart('register/daftar')?>
+                 <?php
+                 $this->load->helper('form');
+                 $error = $this->session->flashdata('infogagal');
+                 if($error)
+                 {
+                  ?>
+                  <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <?php echo $this->session->flashdata('infogagal'); ?>                    
+                  </div>
+                  <?php } ?>
+                  <?php  
+                  $success = $this->session->flashdata('info');
+                  if($success)
+                  {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      <?php echo $this->session->flashdata('info'); ?>
+                    </div>
+                    <?php } ?>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
+                      </div>
+                    </div> 
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username" name="username" value="<?php echo set_value('username'); ?>">
+                    </div> 
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="password" value="<?php echo set_value('password'); ?>">
+                    </div>                
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-lg" id="exampleInputPassword2" placeholder="Retype password" name="password2" value="<?php echo set_value('password2'); ?>">
+                    </div>
+<!--                 <div class="row">
+                  <div class="col-md-12">                                
+                    <div class="form-group">
+                      <h7><label>&nbsp Profil Picture</label></h7>
+                      <input type="file" class="form-control required" id="photo" name="photo">
+                    </div>
+                  </div>   
+                </div> -->
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
@@ -58,8 +86,11 @@
                     </label>
                   </div>
                 </div>
-                <div class="mt-3">
+<!--                 <div class="mt-3">
                   <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="">SIGN UP</a>
+                </div> -->
+                <div class="mt-3">
+                  <input type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" name="submit" value="SIGN UP"> 
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                   Already have an account? <a href="<?php echo base_url('index.php/login') ?>" class="text-primary">Login</a>
