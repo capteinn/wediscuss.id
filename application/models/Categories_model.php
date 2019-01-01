@@ -7,7 +7,7 @@ class Categories_model extends CI_Model
 	// }
 	function all() {
 		// return $this->db->select('categories.id, categories.name');
-		return $this->db->get('categories');
+		return $this->db->get('categories')->result();
 	}
 
 	public function update($data)
