@@ -17,7 +17,7 @@
                 <select class="form-control" id="category" name="category" required="">
                   <option value="">Select Category</option>
                   <?php 
-                    foreach ($categories as $category) { 
+                    foreach ($categories->result() as $category) { 
                       echo "<option value='".$category->id."' >".$category->name."</option>";
                     }
                   ?>

@@ -69,7 +69,7 @@ class Discuss extends BaseController {
     		'title' => $title,
     		'category_id' => $category,
     		'description' => $description,
-    		'user_id' => 1
+    		'user_id' => $this->user_id
     	);
 
     	$result = $this->thread_model->store($data);

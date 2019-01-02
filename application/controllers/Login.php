@@ -43,6 +43,7 @@ class Login extends CI_Controller {
 				'role_id'=>$result->role_id,
 				'username'=>$result->username,
 				'role'=>$result->name,
+				'photo'=>$result->photo,
 				'isLoggedIn' => TRUE
 			);
 			

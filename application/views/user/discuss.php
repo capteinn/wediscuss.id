@@ -31,7 +31,8 @@
                     <?= date('F Y - H:i', strtotime($thread->date_realease)); ?>
                   </td>
                   <td>
-                    21
+                    <i class="mdi mdi-thumb-up text-success"></i> <?php echo $thread->like ?>
+                    <i class="mdi mdi-thumb-down text-danger ml-3"></i> <?php echo $thread->dislike ?>
                   </td>
                   <td>
                     <a href="<?php echo site_url('discuss/detail/'.$thread->id) ?>" class="badge badge-gradient-info" title="detail" ><i class="mdi mdi-eye"></i></a>
