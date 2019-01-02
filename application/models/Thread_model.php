@@ -7,6 +7,12 @@ class Thread_model extends CI_Model
 		->where('deleted', 0)->get('threads')->result();
 	}
 
+	function getById($id) {
+		return $this->db
+		->where('id', $id)
+		->get('threads')->row();
+	}
+
 	function detail($id) {
 		return $this->db
 		->select('users.username, users.photo, threads.created_at date_realease, threads.*, categories.name category_name, threads.id thread_id')
@@ -27,6 +33,11 @@ class Thread_model extends CI_Model
 
 	function store($data) {
 		return $this->db->insert('threads', $data);
+	}
+
+	function update($data, $id) {
+		$this->db->where('id', $id);
+		return $this->db->update('threads', $data);
 	}
 
 	function updateLike($data, $id) {

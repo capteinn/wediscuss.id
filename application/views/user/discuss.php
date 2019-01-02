@@ -36,7 +36,18 @@
                   </td>
                   <td>
                     <a href="<?php echo site_url('discuss/detail/'.$thread->id) ?>" class="badge badge-gradient-info" title="detail" ><i class="mdi mdi-eye"></i></a>
+                    <?php 
+                      if ($thread->user_id == $this->session->userdata('user_id')) {
+                    ?>
+                    <a href="<?php echo site_url('discuss/edit/'.$thread->id) ?>" class="badge badge-gradient-success" title="edit" ><i class="mdi mdi-grease-pencil"></i></a>
                     <a onclick="return confirm('Apakah Anda yakin ingin menghapus thread ini? :(')" href="<?php echo site_url('discuss/delete/'.$thread->id) ?>" class="badge badge-gradient-danger" title="detail" ><i class="mdi mdi-delete"></i></a>
+                    <?php
+                      } else if ($this->session->userdata('role_id') == 2) {
+                    ?>
+                    <a onclick="return confirm('Apakah Anda yakin ingin menghapus thread ini? :(')" href="<?php echo site_url('discuss/delete/'.$thread->id) ?>" class="badge badge-gradient-danger" title="detail" ><i class="mdi mdi-delete"></i></a>
+                    <?php
+                      }
+                    ?>
                   </td>
                 </tr>
               <?php } ?>
