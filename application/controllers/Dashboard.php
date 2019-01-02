@@ -8,7 +8,6 @@ class Dashboard extends BaseController {
   {
 		parent::__construct();
 		$this->isLoggedIn();
-		$this->isStudent();
 	}
 
 	public function index()

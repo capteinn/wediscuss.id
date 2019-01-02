@@ -11,7 +11,6 @@ class Discuss extends BaseController {
 	{
 		parent::__construct();
 		$this->isLoggedIn();
-		$this->isStudent();
 
 		$this->load->model('thread_model');
 		$this->load->model('categories_model');
@@ -128,5 +127,13 @@ class Discuss extends BaseController {
 		$this->comment_model->store($data);
 
 		redirect('discuss/detail/'.$id);
+	}
+
+	public function delete($id) {
+		if ($this->role_id == 2) {
+			$this->db->where('id', $id)->update('threads', array('deleted'=>1));
+		}
+		
+		redirect('discuss');
 	}
 }

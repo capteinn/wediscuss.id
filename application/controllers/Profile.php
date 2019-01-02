@@ -8,7 +8,6 @@ class Profile extends BaseController {
 	{
 		parent::__construct();
 		$this->isLoggedIn();
-		$this->isStudent();
 	}
 
 	public function index()
@@ -46,6 +45,10 @@ class Profile extends BaseController {
 
     	if ($result) {
     		$this->session->set_userdata('username', $username);
+    	}
+
+    	if ($photo) {
+    		$this->session->set_userdata('photo', $photo);
     	}
 
 			redirect('profile');

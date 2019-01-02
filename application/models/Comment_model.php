@@ -5,7 +5,7 @@ class Comment_model extends CI_Model
 
 	function detail($id) {
 		return $this->db
-		->select('description, thread_id, username, comments.created_at')
+		->select('description, thread_id, username, comments.created_at, users.photo')
 		->where('thread_id', $id)
 		->join('users', 'users.id = comments.user_id')
 		->get('comments')->result();

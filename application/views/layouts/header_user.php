@@ -52,6 +52,10 @@
             </a>
             <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="<?= site_url('profile') ?>">
+                <i class="mdi mdi-account mr-2 text-primary"></i>
+                Profile
+              </a>
               <a class="dropdown-item" href="<?= site_url('access/logout') ?>">
                 <i class="mdi mdi-logout mr-2 text-primary"></i>
                 Signout

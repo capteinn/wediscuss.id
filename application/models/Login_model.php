@@ -8,7 +8,6 @@ class Login_model extends CI_Model
       ->from('users as u')
       ->join('roles as r','r.id=u.role_id')
       ->where('u.username', $username)
-      ->where('u.role_id', 1)
       ->get()->row();
       
       if(!empty($user)){

@@ -36,6 +36,7 @@
                   </td>
                   <td>
                     <a href="<?php echo site_url('discuss/detail/'.$thread->id) ?>" class="badge badge-gradient-info" title="detail" ><i class="mdi mdi-eye"></i></a>
+                    <a onclick="return confirm('Apakah Anda yakin ingin menghapus thread ini? :(')" href="<?php echo site_url('discuss/delete/'.$thread->id) ?>" class="badge badge-gradient-danger" title="detail" ><i class="mdi mdi-delete"></i></a>
                   </td>
                 </tr>
               <?php } ?>

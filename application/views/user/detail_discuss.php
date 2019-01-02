@@ -83,7 +83,7 @@
 
         ?>
         <div class="media">
-            <img style="width: 50px; height: 50px" src="<?= base_url() ?>public/images/faces/face4.jpg" alt="image" class="icon-md text-info d-flex align-self-center mx-3 rounded">
+            <img style="width: 50px; height: 50px" src="<?= base_url() ?>public/images/faces/<?php echo $comment->photo ?>" alt="image" class="icon-md text-info d-flex align-self-center mx-3 rounded">
             <div class="media-body">
               <p class="card-text"><?php echo '<b>' . ucwords($comment->username) . '</b> <span class="pl-2 small text-muted">'. date('d-m-Y H:i', strtotime($comment->created_at)) .'</span><br>' . $comment->description ?></p>
             </div>
