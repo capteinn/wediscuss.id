@@ -43,7 +43,7 @@
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" id="profileDropdown" href="<?= base_url() ?>public/#" data-toggle="dropdown" aria-expanded="false">
               <div class="nav-profile-img">
-                <img src="<?= base_url() ?>public/images/faces/face1.jpg" alt="image">
+                <img src="<?= base_url() ?>public/images/faces/<?php echo $this->session->userdata('photo') ?>" alt="image">
                 <span class="availability-status online"></span>             
               </div>
               <div class="nav-profile-text">
