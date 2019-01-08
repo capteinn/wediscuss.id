@@ -15,10 +15,10 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="<?= base_url() ?>public/images/favicon.png" />
   <!-- datatables -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url() ?>public/css/datatable.bootstrap.min.css">
+  <link rel="stylesheet" href="<?= base_url() ?>public/css/responsive.bootstrap.min.css">
   <!-- wysiwyg summernote -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css">
+  <link rel="stylesheet" href="<?= base_url() ?>public/css/summernote.css">
 </head>
 <body>
   <div class="container-scroller">

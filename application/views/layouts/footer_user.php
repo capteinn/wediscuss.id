@@ -27,12 +27,12 @@
   <!-- Custom js for this page-->
   <script src="<?= base_url() ?>public/js/dashboard.js"></script>
   <!-- datatables -->
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+  <script src="<?= base_url() ?>public/js/jquery-datatables.min.js"></script>
+  <script src="<?= base_url() ?>public/js/datatable.bootstrap.min.js"></script>
+  <script src="<?= base_url() ?>public/js/datatable.responsive.min.js"></script>
+  <script src="<?= base_url() ?>public/js/responsive.bootstrap.min.js"></script>
   <!-- wysiwyg summernote -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+  <script src="<?= base_url() ?>public/js/summernote.js"></script>
   <!-- End custom js for this page-->
 
   <script type="text/javascript">

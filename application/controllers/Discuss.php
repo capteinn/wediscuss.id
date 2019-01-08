@@ -81,6 +81,47 @@ class Discuss extends BaseController {
     }
 	}
 
+	public function edit($id) {
+		$data['threads'] = $this->thread_model->getById($id);
+		$data['categories'] = $this->categories_model->all();
+		
+		$this->loadViews('user/edit_discuss', $data);
+	}
+
+	public function update()
+	{
+		$this->form_validation->set_rules('title','Title','trim|required|xss_clean');
+		$this->form_validation->set_rules('category','Category','trim|required|numeric|xss_clean');
+		$this->form_validation->set_rules('description','Description','trim|required|xss_clean');
+
+    	$id = $this->input->post('id');
+    	
+		if($this->form_validation->run() == FALSE)
+    {
+       $this->edit($id);
+    }
+    else
+    {
+    	$title = $this->input->post('title');
+    	$category = $this->input->post('category');
+    	$description = $this->input->post('description');
+
+    	$data = array(
+    		'title' => $title,
+    		'category_id' => $category,
+    		'description' => $description
+    	);
+
+    	$result = $this->thread_model->update($data, $id);
+
+			if($result) {
+				redirect('discuss');
+			}else{
+				$this->edit($id);
+			}
+    }
+	}
+
 	public function like($id, $comment_id = NULL) {
 		$data = array(
 			'thread_id' => $id,
